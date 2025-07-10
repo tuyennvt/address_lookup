@@ -1,0 +1,21 @@
+{
+    "_locale": "vi",
+    "app_name": "My Flutter",
+    "common_agree": "Đồng ý",
+    "common_confirm": "Xác nhận",
+    "common_save": "Lưu",
+    "common_cancel": "Huỷ",
+    "common_skip": "Bỏ qua",
+    "common_notify": "Thông báo",
+    "common_close": "Đóng",
+    "common_retry": "Thử lại",
+    "commonDialog_processing_title": "Đang xử lý",
+    "exception_sessionExpired_message": "Phiên làm việc đã hết hạn",
+    "exception_formatData_message": "Dữ liệu không đúng định dạng",
+    "exception_network_message": "Lỗi kết nối mạng",
+    "exception_connectionTimeout_message": "Kết nối mạng đã hết thời gian",
+    "exception_receiveTimeout_message": "Không nhận được dữ liệu từ máy chủ",
+    "exception_sendTimeout_message": "Không gửi được dữ liệu đến máy chủ",
+    "exception_badResponse_message": "Dữ liệu trả về không đúng",
+    "exception_unknown_message": "Đã xảy ra lỗi"
+}

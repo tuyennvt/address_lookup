@@ -1,0 +1,80 @@
+name: address_lookup
+description: Address Lookup
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # Data handling
+  rxdart: 0.28.0
+  dartx: 1.2.0
+
+  # State management
+  bloc: 9.0.0
+  flutter_bloc: 9.1.1
+
+  # Dependency injection
+  get_it: 8.0.3
+  injectable: 2.5.0
+
+  # Networking
+  dio: 5.8.0+1
+
+  # Serializable
+  freezed_annotation: ^3.1.0
+  json_annotation: 4.9.0
+
+  # Local storage
+  shared_preferences: 2.5.3
+
+  # Analytics & Logging
+  analyzer: any
+  firebase_analytics: ^11.5.2
+  firebase_crashlytics: ^4.3.9
+
+  # UI & Components
+  cupertino_icons: 1.0.8
+  flutter_svg: ^2.2.0
+  cached_network_image: 3.4.1
+  shimmer: 3.0.0
+  font_awesome_flutter: 10.8.0
+
+  # Utilities
+  intl: any
+  url_launcher: 6.3.1
+  flutter_keyboard_visibility: any
+  firebase_core: ^3.15.1
+  csv: ^6.0.0
+  sqflite: ^2.4.2
+  uuid: ^4.5.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+  build_runner: ^2.5.4
+  freezed: ^3.1.0
+  json_serializable: 6.9.5
+  injectable_generator: 2.7.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/data/
+
+flutter_intl:
+  enabled: true
+  main_locale: vi

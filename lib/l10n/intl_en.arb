@@ -1,0 +1,21 @@
+{
+  "_locale": "en",
+  "app_name": "My Flutter",
+  "common_agree": "Agree",
+  "common_confirm": "Confirm",
+  "common_save": "Save",
+  "common_cancel": "Cancel",
+  "common_skip": "Skip",
+  "common_notify": "Notification",
+  "common_close": "Close",
+  "common_retry": "Retry",
+  "commonDialog_processing_title": "Processing",
+  "exception_sessionExpired_message": "Session has expired",
+  "exception_formatData_message": "Invalid data format",
+  "exception_network_message": "Network error",
+  "exception_connectionTimeout_message": "Network connection timed out",
+  "exception_receiveTimeout_message": "No response received from the server",
+  "exception_sendTimeout_message": "Failed to send data to the server",
+  "exception_badResponse_message": "Invalid response data",
+  "exception_unknown_message": "An error has occurred"
+}

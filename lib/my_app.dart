@@ -18,11 +18,6 @@ class _MyAppState extends State<MyApp> {
   final _appConfig = AppConfig();
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,

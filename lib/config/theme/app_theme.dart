@@ -27,7 +27,7 @@ class AppTheme {
       ColorScheme.fromSeed(
         seedColor: Colors.blueAccent,
         brightness: brightness,
-      );
+      ).copyWith(primary: Colors.blueAccent);
 
   static DividerThemeData _getDividerTheme() =>
       const DividerThemeData(thickness: 1, space: 1);

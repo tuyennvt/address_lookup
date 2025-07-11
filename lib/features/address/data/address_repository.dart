@@ -42,4 +42,65 @@ class AddressRepository {
       return false;
     }
   }
+
+  Future<List<String>> getOldProvinces() async {
+    try {
+      final result = await _databaseService.database.rawQuery(
+        'SELECT DISTINCT ${'old_province'} FROM ${Address.tableName}',
+      );
+      return result.map((e) => e['old_province'] as String).toList();
+    } catch (error, stack) {
+      CrashlyticsWrapper.log(error, stack: stack);
+      return [];
+    }
+  }
+
+  Future<List<String>> getOldDistricts(String oldProvince) async {
+    try {
+      final result = await _databaseService.database.rawQuery(
+        'SELECT DISTINCT ${'old_district'} FROM ${Address.tableName} WHERE ${'old_province'} = ?',
+        [oldProvince],
+      );
+      return result.map((e) => e['old_district'] as String).toList();
+    } catch (error, stack) {
+      CrashlyticsWrapper.log(error, stack: stack);
+      return [];
+    }
+  }
+
+  Future<List<String>> getOldWards(String oldDistrict) async {
+    try {
+      final result = await _databaseService.database.rawQuery(
+        'SELECT DISTINCT ${'old_ward'} FROM ${Address.tableName} WHERE ${'old_district'} = ?',
+        [oldDistrict],
+      );
+      return result.map((e) => e['old_ward'] as String).toList();
+    } catch (error, stack) {
+      CrashlyticsWrapper.log(error, stack: stack);
+      return [];
+    }
+  }
+
+  Future<List<Address>> getNewAddresss({
+    required String oldProvince,
+    required String oldDistrict,
+    required String oldWard,
+  }) async {
+    try {
+      final result = await _databaseService.database.rawQuery(
+        'SELECT * FROM ${Address.tableName} WHERE '
+        '${'old_province'} = ? AND '
+        '${'old_district'} = ? AND '
+        '${'old_ward'} = ?',
+        [oldProvince, oldDistrict, oldWard],
+      );
+      if (result.isNotEmpty) {
+        return result.map((e) => Address.fromJson(e)).toList();
+      }
+      return [];
+    } catch (error, stack) {
+      CrashlyticsWrapper.log(error, stack: stack);
+      return [];
+    }
+  }
 }

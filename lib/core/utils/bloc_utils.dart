@@ -3,7 +3,7 @@
 import 'package:bloc/bloc.dart';
 
 extension CubitUtils<State> on Cubit<State> {
-  void emitSafety(State state) {
+  void emitSafely(State state) {
     if (!isClosed) {
       emit(state);
     }

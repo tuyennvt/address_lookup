@@ -19,6 +19,8 @@ import 'package:address_lookup/core/services/prefs.dart' as _i204;
 import 'package:address_lookup/features/address/data/address_repository.dart'
     as _i725;
 import 'package:address_lookup/features/main/cubit/main_cubit.dart' as _i67;
+import 'package:address_lookup/features/search/cubit/search_cubit.dart'
+    as _i819;
 import 'package:address_lookup/features/splash/cubit/splash_cubit.dart'
     as _i717;
 import 'package:get_it/get_it.dart' as _i174;
@@ -41,6 +43,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.singleton<_i941.LocalDatabaseService>(
       () => _i941.LocalDatabaseService(),
     );
+    gh.lazySingleton<_i67.MainCubit>(() => _i67.MainCubit());
     gh.factory<_i725.AddressRepository>(
       () => _i725.AddressRepository(gh<_i941.LocalDatabaseService>()),
     );
@@ -48,8 +51,8 @@ extension GetItInjectableX on _i174.GetIt {
     gh.singleton<_i717.SplashCubit>(
       () => _i717.SplashCubit(gh<_i725.AddressRepository>()),
     );
-    gh.lazySingleton<_i67.MainCubit>(
-      () => _i67.MainCubit(gh<_i725.AddressRepository>()),
+    gh.lazySingleton<_i819.SearchCubit>(
+      () => _i819.SearchCubit(gh<_i725.AddressRepository>()),
     );
     gh.factory<_i167.AuthInterceptor>(
       () => _i167.AuthInterceptor(gh<_i204.Prefs>()),

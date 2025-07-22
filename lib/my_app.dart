@@ -1,6 +1,4 @@
-import 'package:csv/csv.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
 
 import 'config/environment/app_config.dart';
 import 'config/theme/app_theme.dart';

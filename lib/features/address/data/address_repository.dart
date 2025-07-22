@@ -103,4 +103,47 @@ class AddressRepository {
       return [];
     }
   }
+
+  Future<List<Address>> search(
+    String query, {
+    int page = 1,
+    int limit = 100,
+  }) async {
+    try {
+      if (query.trim().isEmpty) {
+        return [];
+      }
+
+      final searchQuery = '%${query.trim()}%';
+      final offset = (page - 1) * limit;
+
+      final result = await _databaseService.database.rawQuery(
+        'SELECT * FROM ${Address.tableName} WHERE '
+        'old_province LIKE ? COLLATE NOCASE OR '
+        'old_district LIKE ? COLLATE NOCASE OR '
+        'old_ward LIKE ? COLLATE NOCASE OR '
+        'new_province LIKE ? COLLATE NOCASE OR '
+        'new_ward LIKE ? COLLATE NOCASE '
+        'ORDER BY old_province, old_district, old_ward '
+        'LIMIT ? OFFSET ?',
+        [
+          searchQuery,
+          searchQuery,
+          searchQuery,
+          searchQuery,
+          searchQuery,
+          limit,
+          offset,
+        ],
+      );
+
+      if (result.isNotEmpty) {
+        return result.map((e) => Address.fromJson(e)).toList();
+      }
+      return [];
+    } catch (error, stack) {
+      CrashlyticsWrapper.log(error, stack: stack);
+      return [];
+    }
+  }
 }

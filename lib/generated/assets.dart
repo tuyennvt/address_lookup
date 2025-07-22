@@ -6,6 +6,7 @@ class Assets {
   static const String iconsClearText = 'assets/icons/clear_text.svg';
   static const String imagesEmpty = 'assets/images/empty.webp';
   static const String imagesError = 'assets/images/error.webp';
-  static const String imagesNetworkUnavailable =
-      'assets/images/network_unavailable.webp';
+  static const String imagesNetworkUnavailable = 'assets/images/network_unavailable.webp';
+  static const String imagesSearchEmpty = 'assets/images/search_empty.webp';
+
 }

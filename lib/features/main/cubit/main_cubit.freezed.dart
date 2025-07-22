@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$MainState {
 
- List<String> get oldProvinces; String get selectedOldProvince; List<String> get oldDistricts; String get selectedOldDistrict; List<String> get oldWards; String get selectedOldWard; List<Address> get newAddresses;
+ int get navIndex;
 /// Create a copy of MainState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,16 +25,16 @@ $MainStateCopyWith<MainState> get copyWith => _$MainStateCopyWithImpl<MainState>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is MainState&&const DeepCollectionEquality().equals(other.oldProvinces, oldProvinces)&&(identical(other.selectedOldProvince, selectedOldProvince) || other.selectedOldProvince == selectedOldProvince)&&const DeepCollectionEquality().equals(other.oldDistricts, oldDistricts)&&(identical(other.selectedOldDistrict, selectedOldDistrict) || other.selectedOldDistrict == selectedOldDistrict)&&const DeepCollectionEquality().equals(other.oldWards, oldWards)&&(identical(other.selectedOldWard, selectedOldWard) || other.selectedOldWard == selectedOldWard)&&const DeepCollectionEquality().equals(other.newAddresses, newAddresses));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is MainState&&(identical(other.navIndex, navIndex) || other.navIndex == navIndex));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(oldProvinces),selectedOldProvince,const DeepCollectionEquality().hash(oldDistricts),selectedOldDistrict,const DeepCollectionEquality().hash(oldWards),selectedOldWard,const DeepCollectionEquality().hash(newAddresses));
+int get hashCode => Object.hash(runtimeType,navIndex);
 
 @override
 String toString() {
-  return 'MainState(oldProvinces: $oldProvinces, selectedOldProvince: $selectedOldProvince, oldDistricts: $oldDistricts, selectedOldDistrict: $selectedOldDistrict, oldWards: $oldWards, selectedOldWard: $selectedOldWard, newAddresses: $newAddresses)';
+  return 'MainState(navIndex: $navIndex)';
 }
 
 
@@ -45,7 +45,7 @@ abstract mixin class $MainStateCopyWith<$Res>  {
   factory $MainStateCopyWith(MainState value, $Res Function(MainState) _then) = _$MainStateCopyWithImpl;
 @useResult
 $Res call({
- List<String> oldProvinces, String selectedOldProvince, List<String> oldDistricts, String selectedOldDistrict, List<String> oldWards, String selectedOldWard, List<Address> newAddresses
+ int navIndex
 });
 
 
@@ -62,16 +62,10 @@ class _$MainStateCopyWithImpl<$Res>
 
 /// Create a copy of MainState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? oldProvinces = null,Object? selectedOldProvince = null,Object? oldDistricts = null,Object? selectedOldDistrict = null,Object? oldWards = null,Object? selectedOldWard = null,Object? newAddresses = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? navIndex = null,}) {
   return _then(_self.copyWith(
-oldProvinces: null == oldProvinces ? _self.oldProvinces : oldProvinces // ignore: cast_nullable_to_non_nullable
-as List<String>,selectedOldProvince: null == selectedOldProvince ? _self.selectedOldProvince : selectedOldProvince // ignore: cast_nullable_to_non_nullable
-as String,oldDistricts: null == oldDistricts ? _self.oldDistricts : oldDistricts // ignore: cast_nullable_to_non_nullable
-as List<String>,selectedOldDistrict: null == selectedOldDistrict ? _self.selectedOldDistrict : selectedOldDistrict // ignore: cast_nullable_to_non_nullable
-as String,oldWards: null == oldWards ? _self.oldWards : oldWards // ignore: cast_nullable_to_non_nullable
-as List<String>,selectedOldWard: null == selectedOldWard ? _self.selectedOldWard : selectedOldWard // ignore: cast_nullable_to_non_nullable
-as String,newAddresses: null == newAddresses ? _self.newAddresses : newAddresses // ignore: cast_nullable_to_non_nullable
-as List<Address>,
+navIndex: null == navIndex ? _self.navIndex : navIndex // ignore: cast_nullable_to_non_nullable
+as int,
   ));
 }
 
@@ -156,10 +150,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<String> oldProvinces,  String selectedOldProvince,  List<String> oldDistricts,  String selectedOldDistrict,  List<String> oldWards,  String selectedOldWard,  List<Address> newAddresses)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int navIndex)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _MainState() when $default != null:
-return $default(_that.oldProvinces,_that.selectedOldProvince,_that.oldDistricts,_that.selectedOldDistrict,_that.oldWards,_that.selectedOldWard,_that.newAddresses);case _:
+return $default(_that.navIndex);case _:
   return orElse();
 
 }
@@ -177,10 +171,10 @@ return $default(_that.oldProvinces,_that.selectedOldProvince,_that.oldDistricts,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<String> oldProvinces,  String selectedOldProvince,  List<String> oldDistricts,  String selectedOldDistrict,  List<String> oldWards,  String selectedOldWard,  List<Address> newAddresses)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int navIndex)  $default,) {final _that = this;
 switch (_that) {
 case _MainState():
-return $default(_that.oldProvinces,_that.selectedOldProvince,_that.oldDistricts,_that.selectedOldDistrict,_that.oldWards,_that.selectedOldWard,_that.newAddresses);case _:
+return $default(_that.navIndex);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -197,10 +191,10 @@ return $default(_that.oldProvinces,_that.selectedOldProvince,_that.oldDistricts,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<String> oldProvinces,  String selectedOldProvince,  List<String> oldDistricts,  String selectedOldDistrict,  List<String> oldWards,  String selectedOldWard,  List<Address> newAddresses)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int navIndex)?  $default,) {final _that = this;
 switch (_that) {
 case _MainState() when $default != null:
-return $default(_that.oldProvinces,_that.selectedOldProvince,_that.oldDistricts,_that.selectedOldDistrict,_that.oldWards,_that.selectedOldWard,_that.newAddresses);case _:
+return $default(_that.navIndex);case _:
   return null;
 
 }
@@ -212,40 +206,10 @@ return $default(_that.oldProvinces,_that.selectedOldProvince,_that.oldDistricts,
 
 
 class _MainState implements MainState {
-  const _MainState({final  List<String> oldProvinces = const [], this.selectedOldProvince = '', final  List<String> oldDistricts = const [], this.selectedOldDistrict = '', final  List<String> oldWards = const [], this.selectedOldWard = '', final  List<Address> newAddresses = const []}): _oldProvinces = oldProvinces,_oldDistricts = oldDistricts,_oldWards = oldWards,_newAddresses = newAddresses;
+  const _MainState({required this.navIndex});
   
 
- final  List<String> _oldProvinces;
-@override@JsonKey() List<String> get oldProvinces {
-  if (_oldProvinces is EqualUnmodifiableListView) return _oldProvinces;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_oldProvinces);
-}
-
-@override@JsonKey() final  String selectedOldProvince;
- final  List<String> _oldDistricts;
-@override@JsonKey() List<String> get oldDistricts {
-  if (_oldDistricts is EqualUnmodifiableListView) return _oldDistricts;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_oldDistricts);
-}
-
-@override@JsonKey() final  String selectedOldDistrict;
- final  List<String> _oldWards;
-@override@JsonKey() List<String> get oldWards {
-  if (_oldWards is EqualUnmodifiableListView) return _oldWards;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_oldWards);
-}
-
-@override@JsonKey() final  String selectedOldWard;
- final  List<Address> _newAddresses;
-@override@JsonKey() List<Address> get newAddresses {
-  if (_newAddresses is EqualUnmodifiableListView) return _newAddresses;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_newAddresses);
-}
-
+@override final  int navIndex;
 
 /// Create a copy of MainState
 /// with the given fields replaced by the non-null parameter values.
@@ -257,16 +221,16 @@ _$MainStateCopyWith<_MainState> get copyWith => __$MainStateCopyWithImpl<_MainSt
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MainState&&const DeepCollectionEquality().equals(other._oldProvinces, _oldProvinces)&&(identical(other.selectedOldProvince, selectedOldProvince) || other.selectedOldProvince == selectedOldProvince)&&const DeepCollectionEquality().equals(other._oldDistricts, _oldDistricts)&&(identical(other.selectedOldDistrict, selectedOldDistrict) || other.selectedOldDistrict == selectedOldDistrict)&&const DeepCollectionEquality().equals(other._oldWards, _oldWards)&&(identical(other.selectedOldWard, selectedOldWard) || other.selectedOldWard == selectedOldWard)&&const DeepCollectionEquality().equals(other._newAddresses, _newAddresses));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MainState&&(identical(other.navIndex, navIndex) || other.navIndex == navIndex));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_oldProvinces),selectedOldProvince,const DeepCollectionEquality().hash(_oldDistricts),selectedOldDistrict,const DeepCollectionEquality().hash(_oldWards),selectedOldWard,const DeepCollectionEquality().hash(_newAddresses));
+int get hashCode => Object.hash(runtimeType,navIndex);
 
 @override
 String toString() {
-  return 'MainState(oldProvinces: $oldProvinces, selectedOldProvince: $selectedOldProvince, oldDistricts: $oldDistricts, selectedOldDistrict: $selectedOldDistrict, oldWards: $oldWards, selectedOldWard: $selectedOldWard, newAddresses: $newAddresses)';
+  return 'MainState(navIndex: $navIndex)';
 }
 
 
@@ -277,7 +241,7 @@ abstract mixin class _$MainStateCopyWith<$Res> implements $MainStateCopyWith<$Re
   factory _$MainStateCopyWith(_MainState value, $Res Function(_MainState) _then) = __$MainStateCopyWithImpl;
 @override @useResult
 $Res call({
- List<String> oldProvinces, String selectedOldProvince, List<String> oldDistricts, String selectedOldDistrict, List<String> oldWards, String selectedOldWard, List<Address> newAddresses
+ int navIndex
 });
 
 
@@ -294,16 +258,10 @@ class __$MainStateCopyWithImpl<$Res>
 
 /// Create a copy of MainState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? oldProvinces = null,Object? selectedOldProvince = null,Object? oldDistricts = null,Object? selectedOldDistrict = null,Object? oldWards = null,Object? selectedOldWard = null,Object? newAddresses = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? navIndex = null,}) {
   return _then(_MainState(
-oldProvinces: null == oldProvinces ? _self._oldProvinces : oldProvinces // ignore: cast_nullable_to_non_nullable
-as List<String>,selectedOldProvince: null == selectedOldProvince ? _self.selectedOldProvince : selectedOldProvince // ignore: cast_nullable_to_non_nullable
-as String,oldDistricts: null == oldDistricts ? _self._oldDistricts : oldDistricts // ignore: cast_nullable_to_non_nullable
-as List<String>,selectedOldDistrict: null == selectedOldDistrict ? _self.selectedOldDistrict : selectedOldDistrict // ignore: cast_nullable_to_non_nullable
-as String,oldWards: null == oldWards ? _self._oldWards : oldWards // ignore: cast_nullable_to_non_nullable
-as List<String>,selectedOldWard: null == selectedOldWard ? _self.selectedOldWard : selectedOldWard // ignore: cast_nullable_to_non_nullable
-as String,newAddresses: null == newAddresses ? _self._newAddresses : newAddresses // ignore: cast_nullable_to_non_nullable
-as List<Address>,
+navIndex: null == navIndex ? _self.navIndex : navIndex // ignore: cast_nullable_to_non_nullable
+as int,
   ));
 }
 

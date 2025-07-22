@@ -1,5 +1,5 @@
 import '../../index.dart';
-import '../main/main_page.dart';
+import '../main/views/main_page.dart';
 import 'cubit/splash_cubit.dart';
 
 class SplashPage extends StatefulWidget {
